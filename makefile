@@ -12,9 +12,8 @@ ChemFunLib.o:	ChemFunLib.c
 
 
 clean:
-	rm -f *~ *.o Formula-I-O-
-
-
+	rm -f *~ *.o	Formulas-I-O-
+	
 
 
 

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
 /*Notes 
 When mentioning 'meaurse' or 'measurements' be mindful that there're different types of measurements
 you could be measuring in milimeters or meters this is also refered to as Prefix Multipliers 
@@ -25,7 +26,7 @@ you could be measuring in milimeters or meters this is also refered to as Prefix
 	if you don't understand density a common riddle is told to explain it.
 		"Which weighs more, a ton of bricks or a ton of feathers?" 
 			They both weigh the same! 
-				if you say bricks yyou confused weight with density.
+				if you say bricks you confused weight with density.
  */
 
 
@@ -42,23 +43,26 @@ scanf("%f", &volume);
 density = mass / (float)volume;
 printf("Denisty is %f\n", density);
 }
+
 /* Density input/output file */
 void DensityIO(){
-float massarray[100];
-float volumearray[100];
-float density[100];
+
+float massarray;
+float volumearray;
+float density; 
 
 FILE *m;
 m = fopen("/Formulas-I-O-/Input/massinput.txt", "r");
-fscanf(m, "%f", massarray);
+fscanf(m, "%f", &massarray);
 FILE *v;
 v = fopen("/Formulas-I-O-/Input/volumeinput.txt","r" );
-fscanf(v, "%f", volumearray);
+fscanf(v, "%f", &volumearray);
 FILE *d;
 d = fopen("/Formulas-I-O-/Output/densityOutput.txt", "w+"); 
 
-density = massarray/ (float)volumearray;
-fputs("%f", density) d);
+density  = massarray / (float)volumearray;
+
+fprintf(d, "%f", density);
 
 fclose(d);
 fclose(m);
